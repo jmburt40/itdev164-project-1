@@ -1,5 +1,5 @@
 ---
-path: sabrose-cafe
+path: sabrosa-cafe
 date: 2021-03-11T22:16:48.306Z
 title: Sabrosa Cafe
 description: Breakfast and lunch spot featuring live music.
