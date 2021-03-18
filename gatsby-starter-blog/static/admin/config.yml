@@ -1,9 +1,9 @@
 backend:
-  name: github
+  name: git-gateway
   repo: jmburt40/janelle-burt-itdev164-project-1
   branch: main
 
-media_folder: static/assets
+media_folder: /static/assets
 public_folder: assets
 collections:
   - name: blog
