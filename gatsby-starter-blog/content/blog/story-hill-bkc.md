@@ -4,7 +4,7 @@ date: 2021-03-11T21:55:23.678Z
 title: Story Hill BKC
 description: '"Rated 4.8 on Google Business, Story Hill is the highest-rated
   wine bar in Milwaukee."'
-image: https://s3-media0.fl.yelpcdn.com/bphoto/Q_XkO0zkD78eWwtSBbKp0g/o.jpg
+image: /assets/storyhillbkc.jpg
 ---
 <!--StartFragment-->
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-plugin-image"
+import Img from "gatsby-image"
 
 const BlogPost = ({ data }) => {
   console.log("data,", data)
@@ -12,7 +12,6 @@ const BlogPost = ({ data }) => {
           fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
         />
         <div> {data.markdownRemark.frontmatter.description}</div>
-
       </div>
     </div>
   )
@@ -29,8 +28,7 @@ export const BlogPostTemplateQuery = graphql`
       frontmatter {
         description
         title
-        image 
-          
+        image
       }
     }
   }
