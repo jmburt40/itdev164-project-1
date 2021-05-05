@@ -49,6 +49,7 @@ const BlogIndex = ({ data, location }) => {
                 }}
                 itemProp="description"
               />
+              <img src= {post.frontmatter.image}/>
             </section>
           </article>
         )
@@ -76,6 +77,7 @@ export const pageQuery = graphql`
           title
           date(formatString: "MMMM DD, YYYY")
           description
+          image
         }
       }
     }

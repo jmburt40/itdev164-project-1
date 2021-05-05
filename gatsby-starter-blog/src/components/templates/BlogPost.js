@@ -25,16 +25,27 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const BlogPostTemplateQuery = graphql`
-  query BlogPostTemplateQuery($slug: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        description
-        title
-        image
-      }
-    }
+query{
+  site {
+  siteMetadata {
+    title
   }
+}
+allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+  nodes {
+    excerpt
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+      image
+      description
+    }
+    
+    rawMarkdownBody
+  }
+}
+}
 `
