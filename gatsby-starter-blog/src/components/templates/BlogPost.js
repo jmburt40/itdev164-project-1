@@ -1,23 +1,44 @@
-import React from "react"
+// /* import React from "react"
+// import { graphql } from "gatsby"
+
+// const BlogPost = ({ data }) => {
+//   console.log("data,", data)
+//   return (
+//     <div>
+//       <div>
+//         <header>
+//         <h2>{data.markdownRemark.frontmatter.title}</h2>
+//         {/* <Img
+//           fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
+//         /> */}
+//         <div> {data.markdownRemark.frontmatter.description}</div>
+//         </header>
+//         <section>
+//        {data.markdownRemark.frontmatter.body}
+//         </section>
+//       </div>
+     
+//     </div>
+//   )
+// }
+
+// export default BlogPost */
+
+/* import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const BlogPost = ({ data }) => {
   console.log("data,", data)
   return (
     <div>
       <div>
-        <header>
         <h2>{data.markdownRemark.frontmatter.title}</h2>
-        {/* <Img
+        <Img
           fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
-        /> */}
+        />
         <div> {data.markdownRemark.frontmatter.description}</div>
-        </header>
-        <section>
-       {data.markdownRemark.frontmatter.body}
-        </section>
       </div>
-     
     </div>
   )
 }
@@ -25,27 +46,74 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const BlogPostTemplateQuery = graphql`
-query{
-  site {
-  siteMetadata {
-    title
+query BlogPostQuery {
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          path
+          title
+          image
+          date
+          description
+        }
+        rawMarkdownBody
+      }
+    }
   }
 }
-allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-  nodes {
-    excerpt
+` */
+
+import React from "react"
+import { graphql } from "gatsby"
+
+
+const BlogPostTemplate = ({ data }) => {
+   console.log("data,", data)
+
+  return (
+      <div>
+       <div>
+           <header>
+
+           <h2>{data.markdownRemark.frontmatter.title}</h2>
+           {/* <Img
+             fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
+           /> */}
+           <div> {data.markdownRemark.frontmatter.description}</div>
+           </header>
+           <section>
+         {data.markdownRemark.rawMarkdownBody}
+        </section>
+        </div>
+       
+       </div>
+    )
+ }
+
+export default BlogPostTemplate
+
+export const pageQuery = graphql`
+query BlogPostBySlug {
+  sitePage {
+    path
+  }
+  markdownRemark {
     fields {
       slug
     }
     frontmatter {
-      title
-      date(formatString: "MMMM DD, YYYY")
+      path
+      date
       image
       description
+      title
     }
-    
     rawMarkdownBody
   }
 }
-}
+
 `
