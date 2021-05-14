@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: jmburt40/janelle-burt-itdev164-project-1
   branch: main
 
