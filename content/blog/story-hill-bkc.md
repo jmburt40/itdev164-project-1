@@ -1,5 +1,5 @@
 ---
-path: story-hill-bkc
+path: blog/story-hill-bkc
 date: 2021-03-13T03:18:59.311Z
 title: Story Hill BKC
 description: '  "Rated 4.8 on Google Business, Story Hill is the highest-rated
